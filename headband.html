@@ -30,7 +30,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      padding: 15px;
+      padding: 20px;
       box-sizing: border-box;
     }
 
@@ -39,38 +39,40 @@
       font-size: 42px;
       text-align: center;
       margin: 10px 0;
-      flex-shrink: 0;
     }
 
-    /* FLEX CONTAINER FOR IMAGE + OPTIONS */
-    .main-content {
+    /* IMAGE AREA */
+    .image-area {
       flex: 1;
       display: flex;
-      justify-content: space-between; /* equal space between main image and option box */
+      justify-content: flex-start;
       align-items: center;
-      gap: 0; /* gap handled by flex spacing */
+      position: relative;
+      padding-left: 20px;
     }
 
-    /* MAIN IMAGE */
     .main-image {
       max-height: 100%;
-      max-width: 60%;   /* slightly bigger */
+      max-width: 55%;
       object-fit: contain;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
     }
 
-    /* OPTIONS BOX */
+    /* OPTIONS ON THE RIGHT */
     .options {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
       background-color: rgba(255, 250, 205, 0.85); 
-      padding: 20px;
+      padding: 15px;
       border-radius: 12px;
-      width: 150px;       /* bigger box */
+      width: 130px;
       justify-content: center;
       align-items: center;
-      flex-shrink: 0;      /* prevent shrinking */
     }
 
     .option {
@@ -101,7 +103,7 @@
     /* NEXT BUTTON */
     .next-container {
       display: flex;
-      justify-content: flex-end; /* align with option box */
+      justify-content: center;
       margin-top: 10px;
     }
 
@@ -143,7 +145,7 @@
 <div class="container">
   <h1>Choose a Headband</h1>
 
-  <div class="main-content">
+  <div class="image-area">
     <!-- Main image -->
     <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
 
@@ -155,7 +157,7 @@
     </div>
   </div>
 
-  <!-- Next button aligned with option box -->
+  <!-- Next button below -->
   <div class="next-container">
     <a href="concealer.html" id="next" class="next-btn">Next</a>
   </div>
