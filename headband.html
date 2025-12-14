@@ -30,50 +30,47 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      position: relative;
+      padding: 15px;
+      box-sizing: border-box;
     }
 
     /* TITLE */
     h1 {
       font-size: 42px;
       text-align: center;
-      margin: 15px 10px 10px;
+      margin: 10px 0;
       flex-shrink: 0;
     }
 
-    /* IMAGE AREA */
-    .image-area {
-      flex: 1.8;
+    /* FLEX CONTAINER FOR IMAGE + OPTIONS */
+    .main-content {
+      flex: 1;
       display: flex;
-      justify-content: flex-start; /* main image on the left */
+      justify-content: space-between; /* equal space between main image and option box */
       align-items: center;
-      min-height: 0;
-      position: relative;
-      padding-left: 20px;
+      gap: 0; /* gap handled by flex spacing */
     }
 
+    /* MAIN IMAGE */
     .main-image {
       max-height: 100%;
-      max-width: 65%;       /* bigger main image */
+      max-width: 60%;   /* slightly bigger */
       object-fit: contain;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
     }
 
-    /* OPTIONS ON THE RIGHT */
+    /* OPTIONS BOX */
     .options {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      position: absolute;
-      right: 10px;          /* moved closer to main image */
-      top: 50%;
-      transform: translateY(-50%);
       background-color: rgba(255, 250, 205, 0.85); 
-      padding: 15px;
+      padding: 20px;
       border-radius: 12px;
-      width: 130px;         /* slightly smaller width so it’s closer */
+      width: 150px;       /* bigger box */
       justify-content: center;
       align-items: center;
+      flex-shrink: 0;      /* prevent shrinking */
     }
 
     .option {
@@ -82,8 +79,8 @@
       transition: transform 0.2s, border 0.2s;
       background: transparent;
       padding: 5px;
-      width: auto;
       text-align: center;
+      width: auto;
     }
 
     .option img {
@@ -102,6 +99,12 @@
     }
 
     /* NEXT BUTTON */
+    .next-container {
+      display: flex;
+      justify-content: flex-end; /* align with option box */
+      margin-top: 10px;
+    }
+
     .next-btn {
       background-color: #FFFACD;
       color: #663399;
@@ -112,7 +115,6 @@
       opacity: 0.5;
       pointer-events: none;
       transition: transform 0.2s, box-shadow 0.2s;
-      margin-top: 8px;
     }
 
     .next-btn.active {
@@ -123,13 +125,6 @@
     .next-btn:hover {
       transform: scale(1.08);
       box-shadow: 0 6px 14px rgba(0,0,0,0.5);
-    }
-
-    /* NEXT BUTTON CONTAINER */
-    .next-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 5px;
     }
 
   </style>
@@ -148,9 +143,11 @@
 <div class="container">
   <h1>Choose a Headband</h1>
 
-  <div class="image-area">
+  <div class="main-content">
+    <!-- Main image -->
     <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
 
+    <!-- Option box -->
     <div class="options">
       <div class="option" id="headbandOption" onclick="chooseHeadband()">
         <img src="headband.png" alt="Headband option">
@@ -158,6 +155,7 @@
     </div>
   </div>
 
+  <!-- Next button aligned with option box -->
   <div class="next-container">
     <a href="concealer.html" id="next" class="next-btn">Next</a>
   </div>
