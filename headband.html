@@ -20,7 +20,7 @@
       overflow: hidden;
     }
 
-    /* MAIN PURPLE BOX – WIDER */
+    /* MAIN PURPLE BOX */
     .container {
       background-color: rgba(102, 51, 153, 0.85);
       width: 95%;
@@ -54,24 +54,24 @@
 
     .main-image {
       max-height: 100%;
-      max-width: 55%;       /* smaller to leave space for option box */
+      max-width: 65%;       /* bigger main image */
       object-fit: contain;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
     }
 
-    /* OPTIONS ON THE RIGHT – FIXED WIDTH */
+    /* OPTIONS ON THE RIGHT */
     .options {
       display: flex;
       flex-direction: column;
       gap: 20px;
       position: absolute;
-      right: 15px;
+      right: 10px;          /* moved closer to main image */
       top: 50%;
       transform: translateY(-50%);
       background-color: rgba(255, 250, 205, 0.85); 
       padding: 15px;
       border-radius: 12px;
-      width: 150px;       /* fixed width */
+      width: 130px;         /* slightly smaller width so it’s closer */
       justify-content: center;
       align-items: center;
     }
@@ -82,13 +82,13 @@
       transition: transform 0.2s, border 0.2s;
       background: transparent;
       padding: 5px;
-      width: auto;        /* fit image inside */
+      width: auto;
       text-align: center;
     }
 
     .option img {
-      width: 100px;       /* fixed image size */
-      height: auto;       /* maintain proportions */
+      width: 100px;
+      height: auto;
       display: block;
     }
 
@@ -136,13 +136,8 @@
 
   <script>
     function chooseHeadband() {
-      // Change main image
       document.getElementById("clawdeen").src = "clawdeen headband.png";
-
-      // Highlight option
       document.getElementById("headbandOption").classList.add("selected");
-
-      // Enable Next button
       document.getElementById("next").classList.add("active");
     }
   </script>
@@ -153,11 +148,9 @@
 <div class="container">
   <h1>Choose a Headband</h1>
 
-  <!-- BIG MAIN IMAGE ON LEFT -->
   <div class="image-area">
     <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
 
-    <!-- VERTICAL OPTIONS ON RIGHT -->
     <div class="options">
       <div class="option" id="headbandOption" onclick="chooseHeadband()">
         <img src="headband.png" alt="Headband option">
@@ -165,7 +158,6 @@
     </div>
   </div>
 
-  <!-- NEXT BUTTON BELOW IMAGE -->
   <div class="next-container">
     <a href="concealer.html" id="next" class="next-btn">Next</a>
   </div>
