@@ -33,14 +33,12 @@
       position: relative;
     }
 
-    /* Smaller title to make more space for image */
     h1 {
-      font-size: 36px;  /* smaller than before */
+      font-size: 36px;
       margin: 0 0 20px 0;
       font-weight: 500;
     }
 
-    /* Image takes up roughly half the height of the container */
     .main-image {
       max-height: 100%;
       max-width: 95%;
@@ -48,7 +46,6 @@
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
     }
 
-    /* Option box below the main image */
     .option-box {
       display: inline-block;
       background-color: #FFFACD;
@@ -56,7 +53,7 @@
       cursor: pointer;
       border: 4px solid transparent;
       transition: transform 0.2s, border 0.2s;
-      margin: 20px auto 0 auto; /* center horizontally */
+      margin: 20px auto 0 auto;
     }
 
     .option-box img {
@@ -73,20 +70,17 @@
       border-radius: 10px;
     }
 
-    /* Next button inside transparent box */
     .next-btn {
       background-color: #FFFACD;
       color: #663399;
-      padding: 10px 24px; /* smaller padding */
-      font-size: 20px;    /* smaller font size */
+      padding: 18px 40px;
+      font-size: 28px;
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       opacity: 0.5;
       pointer-events: none;
       transition: transform 0.2s, box-shadow 0.2s;
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
+      align-self: flex-end;
     }
 
     .next-btn.active {
@@ -99,7 +93,6 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.5);
     }
 
-    /* Flex container for image and option box */
     .flex-space {
       display: flex;
       flex-direction: column;
@@ -111,9 +104,16 @@
 
   <script>
     function chooseHeadband() {
+      // Change main image
       document.getElementById("clawdeen").src = "clawdeen headband.png";
+
+      // Highlight option
       document.getElementById("headbandOption").classList.add("selected");
-       document.getElementById("pageTitle").innerText = "Click on the arrow!";
+
+      // Change title text
+      document.getElementById("pageTitle").innerText = "Click on the arrow for add concealer!";
+
+      // Enable next button
       document.getElementById("next").classList.add("active");
     }
   </script>
@@ -121,15 +121,15 @@
 
 <body>
   <div class="content">
-    <h1> id="pageTitle">Click on the headband to put her hair away!</h1>
+    <h1 id="pageTitle">Help Clawdeen with her Headband</h1>
 
     <div class="flex-space">
       <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
-      
-    <div class="option-box" id="headbandOption" onclick="chooseHeadband()">
-      <img src="headband.png" alt="Headband option">
+
+      <div class="option-box" id="headbandOption" onclick="chooseHeadband()">
+        <img src="headband.png" alt="Headband option">
+      </div>
     </div>
-   </div>
 
     <a href="concealer.html" id="next" class="next-btn">→</a>
   </div>
