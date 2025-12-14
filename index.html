@@ -17,15 +17,15 @@
       justify-content: center;
       align-items: center;
       color: #FFFACD;
-      overflow: hidden; /* PREVENT SCROLL */
+      overflow: hidden; /* NO SCROLL */
     }
 
-    /* MAIN BOX */
+    /* MAIN PURPLE BOX */
     .content {
       background-color: rgba(102, 51, 153, 0.85);
       width: 90%;
-      max-width: 850px;
-      height: 90vh;             /* FITS SCREEN */
+      max-width: 900px;
+      height: 90vh;
       max-height: 650px;
       display: flex;
       flex-direction: column;
@@ -33,56 +33,56 @@
     }
 
     h1 {
-      font-size: 52px;
+      font-size: 48px;       /* smaller title */
       text-align: center;
-      margin: 15px 10px 5px;
+      margin: 10px 10px 0;
       flex-shrink: 0;
     }
 
-    /* IMAGE AREA */
+    /* IMAGE AREA (BIGGER) */
     .image-area {
-      flex: 1;
+      flex: 1.6;             /* MORE SPACE FOR IMAGE */
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 0; /* IMPORTANT */
+      min-height: 0;
     }
 
     .character-image {
       max-height: 100%;
-      max-width: 90%;
+      max-width: 95%;
       object-fit: contain;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
     }
 
-    /* TEXT + BUTTON AREA */
+    /* TEXT AREA (SMALLER) */
     .text-area {
-      flex: 1;
+      flex: 0.6;             /* LESS SPACE */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 15px;
-      gap: 20px;
+      padding: 10px;
+      gap: 12px;
       min-height: 0;
     }
 
     p {
       background-color: #FFFACD;
       color: #663399;
-      padding: 15px;
-      font-size: 22px;
+      padding: 10px;
+      font-size: 18px;       /* smaller text */
       margin: 0;
       width: 100%;
-      max-width: 650px;
+      max-width: 600px;
       text-align: center;
     }
 
     .start-btn {
       background-color: #FFFACD;
       color: #663399;
-      padding: 16px 40px;
-      font-size: 28px;
+      padding: 14px 34px;
+      font-size: 24px;
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: transform 0.2s, box-shadow 0.2s;
@@ -100,15 +100,15 @@
 <div class="content">
   <h1>Welcome to Monster High Makeup Salon!</h1>
 
-  <!-- IMAGE (TOP HALF) -->
+  <!-- BIG IMAGE -->
   <div class="image-area">
     <img src="clawdeen.png" alt="Clawdeen" class="character-image">
   </div>
 
-  <!-- TEXT + BUTTON (BOTTOM HALF) -->
+  <!-- SMALL TEXT AREA -->
   <div class="text-area">
     <p>
-      Click below to help Clawdeen get ready for the most
+      Help Clawdeen get ready for the most
       <strong>FANGTASTIC</strong> party ever!
     </p>
 
