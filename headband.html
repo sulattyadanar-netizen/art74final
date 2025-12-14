@@ -41,13 +41,10 @@
 
     /* Image takes up roughly half the height of the container */
     .main-image {
-      max-height: 50%; /* half of transparent box */
-      width: auto;
-      max-width: 90%;
-      display: block;
-      margin: 0 auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      max-height: 100%; /* half of transparent box */
+      max-width: 95%;
       object-fit: contain;
+      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
     }
 
     /* Option box below the main image */
