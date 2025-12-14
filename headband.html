@@ -37,11 +37,12 @@
     h1 {
       font-size: 36px;  /* smaller than before */
       margin: 0 0 20px 0;
+      font-weight: 500;
     }
 
     /* Image takes up roughly half the height of the container */
     .main-image {
-      max-height: 100%; /* half of transparent box */
+      max-height: 100%;
       max-width: 95%;
       object-fit: contain;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
@@ -76,14 +77,16 @@
     .next-btn {
       background-color: #FFFACD;
       color: #663399;
-      padding: 18px 40px;
-      font-size: 28px;
+      padding: 10px 24px; /* smaller padding */
+      font-size: 20px;    /* smaller font size */
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       opacity: 0.5;
       pointer-events: none;
       transition: transform 0.2s, box-shadow 0.2s;
-      align-self: flex-end; /* bottom-right inside box */
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
     }
 
     .next-btn.active {
@@ -117,7 +120,7 @@
 
 <body>
   <div class="content">
-    <h1>Help Clawdeen with her Headband</h1>
+    <h1>Click on the headband to put her hair away!</h1>
 
     <div class="flex-space">
       <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
