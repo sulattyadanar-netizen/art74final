@@ -54,12 +54,12 @@
 
     .main-image {
       max-height: 100%;
-      max-width: 55%;       /* smaller to leave space for bigger option box */
+      max-width: 55%;       /* smaller to leave space for option box */
       object-fit: contain;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
     }
 
-    /* OPTIONS ON THE RIGHT – BIGGER */
+    /* OPTIONS ON THE RIGHT – FIXED WIDTH */
     .options {
       display: flex;
       flex-direction: column;
@@ -71,7 +71,7 @@
       background-color: rgba(255, 250, 205, 0.85); 
       padding: 15px;
       border-radius: 12px;
-      min-width: 130px;       /* bigger box */
+      width: 150px;       /* fixed width */
       justify-content: center;
       align-items: center;
     }
@@ -82,12 +82,13 @@
       transition: transform 0.2s, border 0.2s;
       background: transparent;
       padding: 5px;
-      width: 100%;
+      width: auto;        /* fit image inside */
       text-align: center;
     }
 
     .option img {
-      width: 100%;           /* fill the bigger option box */
+      width: 100px;       /* fixed image size */
+      height: auto;       /* maintain proportions */
       display: block;
     }
 
@@ -100,7 +101,7 @@
       border-radius: 10px;
     }
 
-    /* NEXT BUTTON SMALLER */
+    /* NEXT BUTTON */
     .next-btn {
       background-color: #FFFACD;
       color: #663399;
@@ -150,13 +151,13 @@
 <body>
 
 <div class="container">
-  <h1>Click on the headband to put her hair back</h1>
+  <h1>Choose a Headband</h1>
 
   <!-- BIG MAIN IMAGE ON LEFT -->
   <div class="image-area">
     <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
 
-    <!-- BIGGER VERTICAL OPTIONS ON RIGHT -->
+    <!-- VERTICAL OPTIONS ON RIGHT -->
     <div class="options">
       <div class="option" id="headbandOption" onclick="chooseHeadband()">
         <img src="headband.png" alt="Headband option">
