@@ -22,29 +22,30 @@
       background: rgba(102, 51, 153, 0.85);
       padding: 30px;
       width: 90%;
-      max-width: 800px;
+      max-width: 900px;
       text-align: center;
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 52px;
       margin-bottom: 20px;
     }
 
-    /* MAIN IMAGE */
+    /* BIG MAIN IMAGE */
     .main-image {
-      width: 300px;
+      width: 450px;           /* BIGGER */
+      max-width: 90%;
       display: block;
       margin: 0 auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      /* NO BACKGROUND — keeps PNG transparent */
     }
 
     /* TEXT BOX */
     .textbox {
       background: #FFFACD;
       color: #663399;
-      padding: 15px;
-      font-size: 22px;
+      padding: 18px;
+      font-size: 24px;
       margin: 20px auto;
       width: 90%;
     }
@@ -58,19 +59,20 @@
 
     .option {
       background: #FFFACD;
-      padding: 8px;
+      padding: 10px;
       cursor: pointer;
       border: 4px solid transparent;
       transition: transform 0.2s, border 0.2s;
     }
 
     .option img {
-      width: 100px;
+      width: 120px;
       display: block;
+      /* transparent PNG stays transparent */
     }
 
     .option:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .option.selected {
@@ -81,11 +83,11 @@
     .next-btn {
       background: #FFFACD;
       color: #663399;
-      padding: 15px 35px;
-      font-size: 26px;
+      padding: 18px 40px;
+      font-size: 28px;
       text-decoration: none;
       display: inline-block;
-      margin-top: 25px;
+      margin-top: 30px;
       opacity: 0.5;
       pointer-events: none;
     }
@@ -98,13 +100,8 @@
 
   <script>
     function chooseHeadband() {
-      // change main image
       document.getElementById("clawdeen").src = "clawdeen headband.png";
-
-      // select option
       document.getElementById("headbandOption").classList.add("selected");
-
-      // enable next button
       document.getElementById("next").classList.add("active");
     }
   </script>
@@ -115,7 +112,7 @@
 <div class="container">
   <h1>Choose a Headband</h1>
 
-  <!-- MAIN IMAGE -->
+  <!-- BIG MAIN IMAGE -->
   <img src="clawdeen.png" id="clawdeen" class="main-image">
 
   <!-- TEXT BOX -->
@@ -123,14 +120,14 @@
     Let's start with a cute headband for Clawdeen!
   </div>
 
-  <!-- ONE OPTION -->
+  <!-- OPTION -->
   <div class="options">
     <div class="option" id="headbandOption" onclick="chooseHeadband()">
       <img src="headband.png" alt="Headband">
     </div>
   </div>
 
-  <!-- NEXT BUTTON -->
+  <!-- NEXT -->
   <a href="concealer.html" id="next" class="next-btn">Next</a>
 </div>
 
