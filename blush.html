@@ -40,7 +40,7 @@
     }
 
     .main-image {
-      max-height: 100%; 
+      max-height: 100%;
       max-width: 95%;
       object-fit: contain;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
@@ -116,24 +116,25 @@
       const nextButton = document.getElementById("next");
       const title = document.getElementById("pageTitle");
 
-      // Change main image based on selected option
+      // Change main image, title, and next button link based on selected option
       if(optionNumber === 1) {
         mainImage.src = "clawdeen_blush1.png";
         title.innerText = "It looks clawsome! Next is eyeshadow!";
-      }
-      if(optionNumber === 2) {
+        nextButton.href = "blush1.html";
+      } else if(optionNumber === 2) {
         mainImage.src = "clawdeen_blush2.png";
         title.innerText = "It looks clawsome! Next is eyeshadow!";
-      }
-      if(optionNumber === 3) {
+        nextButton.href = "blush2.html";
+      } else if(optionNumber === 3) {
         mainImage.src = "clawdeen_blush3.png";
         title.innerText = "It looks clawsome! Next is eyeshadow!";
+        nextButton.href = "blush3.html";
       }
 
       // Highlight selected option and remove highlight from others
-      for(let i=1; i<=3; i++){
-        const opt = document.getElementById("blushOption"+i);
-        if(i === optionNumber) {
+      for(let i = 1; i <= 3; i++){
+        const opt = document.getElementById("blushOption" + i);
+        if(i === optionNumber){
           opt.classList.add("selected");
         } else {
           opt.classList.remove("selected");
@@ -166,7 +167,7 @@
       </div>
     </div>
 
-    <a href="eyeshadow.html" id="next" class="next-btn">→</a>
+    <a href="#" id="next" class="next-btn">→</a>
   </div>
 </body>
 </html>
