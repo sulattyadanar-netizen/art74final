@@ -17,19 +17,21 @@
       justify-content: center;
       align-items: center;
       color: #FFFACD;
-      overflow: hidden; /* NO SCROLL */
+      overflow: hidden;
     }
 
     /* MAIN PURPLE BOX */
     .container {
       background-color: rgba(102, 51, 153, 0.85);
       width: 90%;
-      max-width: 900px;
+      max-width: 700px; /* same as index page */
       height: 90vh;
       max-height: 650px;
       display: flex;
       flex-direction: column;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     /* TITLE */
@@ -40,9 +42,9 @@
       flex-shrink: 0;
     }
 
-    /* IMAGE AREA (BIG) */
+    /* IMAGE AREA */
     .image-area {
-      flex: 1.8;                /* more space for the image */
+      flex: 1.8;                
       display: flex;
       justify-content: center;
       align-items: center;
@@ -50,15 +52,15 @@
     }
 
     .main-image {
-      max-height: 100%;
-      max-width: 95%;
+      width: 60%;        /* match index page */
+      max-width: 300px;  /* match index page */
       object-fit: contain;
-      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
     }
 
     /* OPTIONS + NEXT BUTTON AREA */
     .bottom-area {
-      flex: 0.4;                 /* smaller area for button/options */
+      flex: 0.4;                 
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -95,12 +97,12 @@
       border: 4px solid #663399;
     }
 
-    /* NEXT BUTTON SMALLER */
+    /* NEXT BUTTON */
     .next-btn {
       background-color: #FFFACD;
       color: #663399;
-      padding: 10px 28px;     /* smaller */
-      font-size: 20px;        /* smaller */
+      padding: 10px 28px;     
+      font-size: 20px;        
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       opacity: 0.5;
@@ -136,7 +138,7 @@
 <body>
 
 <div class="container">
-  <h1>Choose a Headband</h1>
+  <h1>Lets give her a Headband</h1>
 
   <!-- BIG MAIN IMAGE -->
   <div class="image-area">
