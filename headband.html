@@ -2,9 +2,7 @@
 <html>
 <head>
   <title>Headband – Monster High Makeup Salon</title>
-
   <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
-
   <style>
     body {
       background-image: url('bakcground.jpg');
@@ -12,49 +10,42 @@
       background-size: cover;
       font-family: 'Bangers';
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       color: #FFFACD;
-      overflow: hidden;
     }
 
     .content {
       background-color: rgba(102, 51, 153, 0.85);
       width: 90%;
-      max-width: 900px;
-      height: 90vh;
-      max-height: 650px;
+      max-width: 700px;        /* keep same size as index page */
+      padding: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      text-align: center;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      justify-content: space-between;  /* space between image, option, next */
+      height: 90vh;
+      max-height: 650px;
+      box-sizing: border-box;
+      position: relative;
     }
 
-    /* TITLE – SMALLER + MORE SPACE */
     h1 {
-      font-size: 42px;        /* smaller */
-      text-align: center;
-      margin: 15px 10px 10px; /* space below */
-      flex-shrink: 0;
+      font-size: 60px;        /* same as index page */
+      margin: 0 0 20px 0;
     }
 
-    .image-area {
-      flex: 1.6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 0;
+    .main-image {
+      width: 60%;             /* same as index page */
+      max-width: 300px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
 
-    .character-image {
-      max-height: 100%;
-      max-width: 95%;
-      object-fit: contain;
-      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
-    }
-
-    /* Option box below the main image */
     .option-box {
       display: inline-block;
       background-color: #FFFACD;
@@ -62,7 +53,7 @@
       cursor: pointer;
       border: 4px solid transparent;
       transition: transform 0.2s, border 0.2s;
-      margin-top: 20px;
+      margin: 20px auto 0 auto;   /* center horizontally */
     }
 
     .option-box img {
@@ -79,20 +70,18 @@
       border-radius: 10px;
     }
 
-    /* Next button bottom-right corner */
+    /* Next button inside the transparent box */
     .next-btn {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
       background-color: #FFFACD;
       color: #663399;
-      padding: 18px 40px;   /* SAME padding as index page buttons */
-      font-size: 28px;       /* SAME font size as index page buttons */
+      padding: 18px 40px;
+      font-size: 28px;
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       opacity: 0.5;
       pointer-events: none;
       transition: transform 0.2s, box-shadow 0.2s;
+      align-self: flex-end;       /* push it to bottom-right inside the box */
     }
 
     .next-btn.active {
@@ -104,15 +93,21 @@
       transform: scale(1.08);
       box-shadow: 0 6px 14px rgba(0,0,0,0.5);
     }
+
+    /* make sure h1, image, option, and button are spaced nicely */
+    .flex-space {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 
   <script>
     function chooseHeadband() {
-      // Change main image
       document.getElementById("clawdeen").src = "clawdeen headband.png";
-      // Highlight the option
       document.getElementById("headbandOption").classList.add("selected");
-      // Enable next button
       document.getElementById("next").classList.add("active");
     }
   </script>
@@ -122,14 +117,13 @@
   <div class="content">
     <h1>Help Clawdeen with her Headband</h1>
 
-    <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
-
-    <!-- Option box below the main image -->
-    <div class="option-box" id="headbandOption" onclick="chooseHeadband()">
-      <img src="headband.png" alt="Headband option">
+    <div class="flex-space">
+      <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
+      <div class="option-box" id="headbandOption" onclick="chooseHeadband()">
+        <img src="headband.png" alt="Headband option">
+      </div>
     </div>
 
-    <!-- Next button bottom-right -->
     <a href="concealer.html" id="next" class="next-btn">→</a>
   </div>
 </body>
