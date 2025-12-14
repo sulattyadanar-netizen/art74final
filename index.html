@@ -12,65 +12,67 @@
       background-size: cover;
       font-family: 'Bangers';
       margin: 0;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
       color: #FFFACD;
+      overflow: hidden; /* PREVENT SCROLL */
     }
 
-    /* MAIN PURPLE BOX */
+    /* MAIN BOX */
     .content {
       background-color: rgba(102, 51, 153, 0.85);
       width: 90%;
       max-width: 850px;
-      height: 85vh;              /* gives room to split */
-      max-height: 700px;
+      height: 90vh;             /* FITS SCREEN */
+      max-height: 650px;
       display: flex;
       flex-direction: column;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     h1 {
-      font-size: 56px;
+      font-size: 52px;
       text-align: center;
-      padding: 20px 20px 10px;
-      margin: 0;
+      margin: 15px 10px 5px;
+      flex-shrink: 0;
     }
 
-    /* IMAGE AREA (TOP HALF) */
+    /* IMAGE AREA */
     .image-area {
-      flex: 1;                   /* HALF THE BOX */
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 0; /* IMPORTANT */
     }
 
     .character-image {
-      height: 100%;              /* fills image area */
       max-height: 100%;
       max-width: 90%;
       object-fit: contain;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
     }
 
-    /* TEXT AREA (BOTTOM HALF) */
+    /* TEXT + BUTTON AREA */
     .text-area {
-      flex: 1;                   /* OTHER HALF */
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
+      gap: 20px;
+      min-height: 0;
     }
 
     p {
       background-color: #FFFACD;
       color: #663399;
-      padding: 20px;
-      font-size: 24px;
-      margin-bottom: 30px;
+      padding: 15px;
+      font-size: 22px;
+      margin: 0;
       width: 100%;
       max-width: 650px;
       text-align: center;
@@ -79,8 +81,8 @@
     .start-btn {
       background-color: #FFFACD;
       color: #663399;
-      padding: 20px 45px;
-      font-size: 30px;
+      padding: 16px 40px;
+      font-size: 28px;
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: transform 0.2s, box-shadow 0.2s;
@@ -98,12 +100,12 @@
 <div class="content">
   <h1>Welcome to Monster High Makeup Salon!</h1>
 
-  <!-- TOP HALF IMAGE -->
+  <!-- IMAGE (TOP HALF) -->
   <div class="image-area">
     <img src="clawdeen.png" alt="Clawdeen" class="character-image">
   </div>
 
-  <!-- BOTTOM HALF TEXT -->
+  <!-- TEXT + BUTTON (BOTTOM HALF) -->
   <div class="text-area">
     <p>
       Click below to help Clawdeen get ready for the most
