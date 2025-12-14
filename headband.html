@@ -10,87 +10,69 @@
       background-size: cover;
       font-family: 'Bangers';
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       color: #FFFACD;
-      overflow: hidden;
     }
 
-    .container {
+    .content {
       background-color: rgba(102, 51, 153, 0.85);
+      padding: 40px;
+      text-align: center;
       width: 90%;
       max-width: 700px;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      padding: 20px;
-      box-sizing: border-box;
+      position: relative;
     }
 
     h1 {
-      font-size: 42px;
-      text-align: center;
-      margin: 15px 10px 10px;
-    }
-
-    .image-area {
-      flex: 1.8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-size: 60px;
+      margin-bottom: 20px;
     }
 
     .main-image {
-      height: 300px;   /* same visual size as index page */
-      width: auto;     /* maintain aspect ratio */
-      object-fit: contain;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+      width: 60%;       /* same size as index page */
+      max-width: 300px;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
 
-    .bottom-area {
-      flex: 0.4;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .options {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .option {
-      background: #FFFACD;
-      padding: 8px;
+    /* Option box */
+    .option-box {
+      display: inline-block;
+      background-color: #FFFACD;
+      padding: 10px;
       cursor: pointer;
       border: 4px solid transparent;
       transition: transform 0.2s, border 0.2s;
     }
 
-    .option img {
+    .option-box img {
       width: 90px;
       display: block;
     }
 
-    .option:hover {
-      transform: scale(1.08);
+    .option-box:hover {
+      transform: scale(1.05);
     }
 
-    .option.selected {
+    .option-box.selected {
       border: 4px solid #663399;
+      border-radius: 10px;
     }
 
+    /* Next button bottom-right */
     .next-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
       background-color: #FFFACD;
       color: #663399;
-      padding: 10px 28px;
-      font-size: 20px;
+      padding: 15px 25px;
+      font-size: 24px;
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       opacity: 0.5;
@@ -107,7 +89,6 @@
       transform: scale(1.08);
       box-shadow: 0 6px 14px rgba(0,0,0,0.5);
     }
-
   </style>
 
   <script>
@@ -120,22 +101,16 @@
 </head>
 
 <body>
-<div class="container">
-  <h1>Click on the headband to put her hair back</h1>
+  <div class="content">
+    <h1>Help Clawdeen with her Headband</h1>
 
-  <div class="image-area">
     <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
-  </div>
 
-  <div class="bottom-area">
-    <div class="options">
-      <div class="option" id="headbandOption" onclick="chooseHeadband()">
-        <img src="headband.png" alt="Headband option">
-      </div>
+    <div class="option-box" id="headbandOption" onclick="chooseHeadband()">
+      <img src="headband.png" alt="Headband option">
     </div>
 
-    <a href="concealer.html" id="next" class="next-btn">Next</a>
+    <a href="concealer.html" id="next" class="next-btn">→</a>
   </div>
-</div>
 </body>
 </html>
