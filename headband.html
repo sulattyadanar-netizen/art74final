@@ -113,6 +113,7 @@
     function chooseHeadband() {
       document.getElementById("clawdeen").src = "clawdeen headband.png";
       document.getElementById("headbandOption").classList.add("selected");
+       document.getElementById("pageTitle").innerText = "Click on the arrow!";
       document.getElementById("next").classList.add("active");
     }
   </script>
@@ -120,14 +121,15 @@
 
 <body>
   <div class="content">
-    <h1>Click on the headband to put her hair away!</h1>
+    <h1> id="pageTitle">Click on the headband to put her hair away!</h1>
 
     <div class="flex-space">
       <img src="clawdeen.png" id="clawdeen" class="main-image" alt="Clawdeen">
-      <div class="option-box" id="headbandOption" onclick="chooseHeadband()">
-        <img src="headband.png" alt="Headband option">
-      </div>
+      
+    <div class="option-box" id="headbandOption" onclick="chooseHeadband()">
+      <img src="headband.png" alt="Headband option">
     </div>
+   </div>
 
     <a href="concealer.html" id="next" class="next-btn">→</a>
   </div>
